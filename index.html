@@ -452,6 +452,9 @@ async function start(){
   db.auth.onAuthStateChange(ev=>{if(ev==='SIGNED_OUT'){S.accounts=[];S.trades=[];render();lg.classList.remove('hide')}});
   const{data}=await db.auth.getSession();
   if(data.session)enter();else lg.classList.remove('hide')}
+/* refresco automatico (para ver operaciones enviadas desde MT5) */
+const refresh=()=>{if(!document.hidden&&lg.classList.contains('hide')&&!md.open)loadAll().catch(()=>{})};
+setInterval(refresh,60000);document.addEventListener('visibilitychange',refresh);
 start();
 </script>
 </body>
