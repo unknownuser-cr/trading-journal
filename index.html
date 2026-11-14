@@ -159,7 +159,7 @@ dialog::backdrop{background:rgba(20,18,15,.55);backdrop-filter:blur(3px)}
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.118.0/dist/umd/supabase.js"></script>
 <script>
-const SYM=['US30','XAUUSD','NAS100'];
+const SYM=['US30','XAUUSD','NAS100','BTCUSD'];
 const SB_URL='https://tyfbejspedsplvzszlle.supabase.co',SB_KEY='sb_publishable_fL-Jikl6Jn5G0FdfiAkV8g_FUGfFhI4';
 const db=window.supabase?window.supabase.createClient(SB_URL,SB_KEY):null;
 let S={accounts:[],trades:[],sel:(()=>{try{return localStorage.getItem('tj_sel')||'all'}catch(e){return'all'}})()},cur=new Date(),pend=null;
